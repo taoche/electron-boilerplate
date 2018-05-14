@@ -1,0 +1,53 @@
+{
+  "productName": "electron-react-boilerplate",
+  "appId": "git.xiaoman.co.Irelia",
+  "copyright": "Copyright © 2012 - 2018 Xiaoman.All Rights Reserved.",
+  "compression": "maximum",
+  "publish": [
+    {
+      "provider": "generic",
+      "url": "http://g.xiaoman.cc:8080/job/test-Mail-Desktop-All/ws/release"
+    }
+  ],
+  "protocols": [
+    {
+      "name": "xiaoman",
+      "schemes": ["xiaoman", "mailto"]
+    }
+  ],
+  "dmg": {
+    "contents": [
+      {
+        "x": 410,
+        "y": 150,
+        "type": "link",
+        "path": "/Applications"
+      },
+      {
+        "x": 130,
+        "y": 150,
+        "type": "file"
+      }
+    ],
+    "title": "小满邮箱 ${version}"
+  },
+  "files": [
+    "dist",
+    "node_modules/",
+    "app.html",
+    "package.json"
+  ],
+  "extraResources": ["resources/"],
+  "directories": {
+    "buildResources": "resources",
+    "output": "release"
+  },
+  "win": {
+    "target": "nsis",
+    "publisherName": "深圳市小满科技有限公司",
+    "verifyUpdateCodeSignature": false
+  },
+  "linux": {
+    "target": ["deb", "AppImage"]
+  }
+}

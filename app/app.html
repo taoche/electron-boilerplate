@@ -8,7 +8,7 @@
         if (!process.env.HOT) {
           const link = document.createElement('link');
           link.rel = 'stylesheet';
-          link.href = './dist/style.css';
+          link.href = './dist/renderer/style.css';
           // HACK: Writing the script path should be done with webpack
           document.getElementsByTagName('head')[0].appendChild(link);
         }
@@ -28,11 +28,11 @@
         }
 
         // Dynamically insert the bundled app script in the renderer process
-        const port = process.env.PORT || 1212;
+        const port = process.env.PORT || 1213;
         scripts.push(
           (process.env.HOT)
             ? 'http://localhost:' + port + '/dist/renderer.dev.js'
-            : './dist/renderer.prod.js'
+            : './dist/renderer/renderer.prod.js'
         );
 
         document.write(
